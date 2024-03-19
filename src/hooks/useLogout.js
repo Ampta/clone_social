@@ -10,6 +10,10 @@ const useLogout = () => {
     const logoutUser = useAuthStore(state => state.logout)
 
     const handleLogout = async () =>{
+
+        if(!window.confirm("Are you sure you want to logout?")) return;
+        if(isLoggingOut) return;
+
         try{
             await signOut();
             localStorage.removeItem('user-instagram')
