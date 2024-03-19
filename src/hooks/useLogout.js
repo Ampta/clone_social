@@ -11,8 +11,7 @@ const useLogout = () => {
 
     const handleLogout = async () =>{
 
-        if(!window.confirm("Are you sure you want to logout?")) return;
-        if(isLoggingOut) return;
+        
 
         try{
             await signOut();
